@@ -6,6 +6,8 @@ class HardwareStatusPublisherNode : public rclcpp::Node // MODIFY NAME
 public:
     HardwareStatusPublisherNode() : Node("hardware_status_publisher") // MODIFY NAME
     {
+      this->declare_parameter("test123", 2);
+      
       pub_ = this->create_publisher<robot_interface::msg::HardwareStatus>(
         "hardware_status", 10);
 
@@ -24,7 +26,7 @@ private:
   void publishHardwareStatus()
   {
     auto msg = robot_interface::msg::HardwareStatus();
-    msg.temperature = 45;
+    msg.temperature = this->get_parameter("test123").as_int();
     msg.are_motors_ready = true;
     msg.debug_message = "Nothing special here";
     pub_->publish(msg);
