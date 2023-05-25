@@ -37,13 +37,21 @@ class TurtleCOntrollerNode(Node): # MODIFY NAME
         if self.pose_ == None or self.turtle_to_catch_ == None:
             return
         
+        list_of_distance = []
+        for turtle in self.turtles_alive_.turtles:
+            _x_ = turtle.x - self.pose_.x
+            _y_ = turtle.y - self.pose_.y
+            list_of_distance.append(math.sqrt(_x_*_x_ + _y_*_y_))
+        
+        minimum_distance_index = list_of_distance.index(min(list_of_distance))
+        self.turtle_to_catch_ = self.turtles_alive_.turtles[minimum_distance_index]
+
         dist_x = self.turtle_to_catch_.x - self.pose_.x
         dist_y = self.turtle_to_catch_.y - self.pose_.y
         distance_ = math.sqrt(dist_x*dist_x + dist_y*dist_y)
 
         msg = Twist()
 
-        # do some stuff
         if distance_ > 0.5:
             # position
             msg.linear.x = 2*distance_
