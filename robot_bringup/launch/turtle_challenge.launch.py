@@ -9,11 +9,17 @@ def generate_launch_description():
         executable="turtlesim_node"
     )
 
-    turtlesim_tele_op = Node(
-        package="turtlesim",
-        executable="turtle_teleop_key"
+    controller = Node(
+        package="turtlesim_challenge",
+        executable="turtle_controller"
+    )
+
+    spawner = Node(
+        package="turtlesim_challenge",
+        executable="turtle_spawner"
     )
     
     ld.add_action(turtlesim_app)
-    ld.add_action(turtlesim_tele_op)
+    ld.add_action(controller)
+    ld.add_action(spawner)
     return ld

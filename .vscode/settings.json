@@ -73,5 +73,21 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "variant": "cpp"
-  }
+  },
+  "python.autoComplete.extraPaths": [
+    "/home/didik/learn_ros2/build/turtlesim_challenge",
+    "/home/didik/learn_ros2/install/turtlesim_challenge/lib/python3.10/site-packages",
+    "/home/didik/learn_ros2/install/py_pkg/lib/python3.10/site-packages",
+    "/home/didik/learn_ros2/install/robot_interface/local/lib/python3.10/dist-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/didik/learn_ros2/build/turtlesim_challenge",
+    "/home/didik/learn_ros2/install/turtlesim_challenge/lib/python3.10/site-packages",
+    "/home/didik/learn_ros2/install/py_pkg/lib/python3.10/site-packages",
+    "/home/didik/learn_ros2/install/robot_interface/local/lib/python3.10/dist-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ]
 }

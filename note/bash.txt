@@ -1,0 +1,10 @@
+#TURTLEBOT3 EXPORT
+export TURTLEBOT3_MODEL=waffle
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+# export ROS_DOMAIN_ID=11
+# export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`ros2 pkg \ prefix turtlebot3_gazebo \ `/share/turtlebot3_gazebo/models/
+
+#ROS
+source /opt/ros/humble/setup.bash
+source /home/didik/learn_ros2/install/setup.bash
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash

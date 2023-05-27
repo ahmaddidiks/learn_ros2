@@ -1,0 +1,14 @@
+simpan map dari turtlebot
+1. ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
+2. ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+3. ros2 run turtlebot3_teleop teleop_keyboard
+4. ros2 run nav2_map_server map_saver_cli -f ./house_map
+
+,,
+
+change the DDS
+sudo apt install ros-humble-rmw-cyclonedds-cpp
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+/opt/ros/humble/share/turtlebot3_navigation2/param$ sudo gedit waffle.yaml
+#robot_model_type: "differential"
+robot_model_type: "nav2_amcl::DifferentialMotionModel"

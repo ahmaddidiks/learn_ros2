@@ -1,0 +1,22 @@
+build project
+colcon build
+
+build specific package
+colcon build --packages-select package_name
+
+colcon build --packages-select package_name --symlink-install
+khusus untuk python dan setelah build ini, untuk run nodenya harus source .bashrc, entah kenapa padahal bisa run node lain
+
+
+rename node name when to run the node
+ros2 run pkg_name node_name --ros-args --remap __node:=ganti_nama
+
+remap node dan topic
+ros2 run pkg_name node_name --ros-args --r __node:ganti_nama -r topic_name:=new_topic_name
+ini akan membuat topic baru
+
+simpan map dari turtlebot
+1. ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
+2. ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+3. ros2 run turtlebot3_teleop teleop_keyboard
+4. ros2 run nav2_map_server map_saver_cli -f ./house_map
