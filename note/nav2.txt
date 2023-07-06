@@ -9,6 +9,11 @@ simpan map dari turtlebot
 change the DDS
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-/opt/ros/humble/share/turtlebot3_navigation2/param$ sudo gedit waffle.yaml
+/opt/ros/humble/share/turtlebot3_navigation2/param
+$ sudo gedit waffle.yaml
 #robot_model_type: "differential"
 robot_model_type: "nav2_amcl::DifferentialMotionModel"
+
+run robot with generated map
+ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=learn_ws/src/maps/house_map.yaml
